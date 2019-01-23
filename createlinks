@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+
+use strict;
+use esmith::Build::CreateLinks qw(:all);
+
+my $event = "nethserver-danb35-update";
+templates2events("/etc/sudoers", $event);

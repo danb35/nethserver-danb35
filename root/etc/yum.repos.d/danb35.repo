@@ -1,0 +1,6 @@
+[danb35]
+name=DanB35 repository for nethserver $releasever - $basearch
+baseurl=https://repo.familybrown.org/nethserver/$releasever
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-danb35
