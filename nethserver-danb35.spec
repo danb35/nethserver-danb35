@@ -3,7 +3,7 @@ Name: nethserver-danb35
 Version: 1.0.0
 Release: 1%{?dist}
 License: GPL
-Source: %{name}-%{version}.tar.bz2
+Source: %{name}-%{version}.tar.gz
 BuildArch: noarch
 URL: https://wiki.nethserver.org/doku.php?id=danb35_repository
 BuildRequires: nethserver-devtools
