@@ -5,7 +5,7 @@ Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.bz2
 BuildArch: noarch
-URL: http://dev.nethserver.org/projects/nethforge/wiki/%{name}
+URL: https://wiki.nethserver.org/doku.php?id=danb35_repository
 BuildRequires: nethserver-devtools
 
 AutoReq: no
