@@ -5,7 +5,6 @@ Summary: NethServer configuration for danb35 repository
 Name: %{name}
 Version: %{version}
 Release: %{release}%{?dist}
-Release: %{release}%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
 BuildArch: noarch
