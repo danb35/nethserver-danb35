@@ -1,0 +1,28 @@
+#! /bin/sh
+
+mkdir -p /tmp/check4danb35Updates.$$
+TMPFILE=`mktemp /tmp/check4danb35Updates.$$/XXXXXXXXXX` || exit 1
+TMP1=`mktemp /tmp/check4danb35Updates.$$/XXXXXXXXXX` || exit 1
+DOMAIN=$(/sbin/e-smith/db configuration get DomainName)|| exit 1
+
+MAILADDR="root admin@$DOMAIN"
+
+yum -e 0 -d 0 check-update --disablerepo=* --enablerepo=danb35 > $TMP1
+if [ $? = 100 ]; then
+  echo -e "===\n=== Yum reports available updates for DanB35 repository :\n===" >> $TMPFILE
+  cat $TMP1 >> $TMPFILE
+ echo -e "\n    To apply all these updates, you can log on your server and run the following command :\n
+    yum update --enablerepo=danb35\n\n >> $TMPFILE
+fi
+
+if [ -s $TMPFILE ]; then
+  if [ "$1" = "-m" ]; then
+    mail -s "DanB35 Updates available for `hostname`" $MAILADDR < $TMPFILE
+  else
+    echo "DanB35 Updates available for `hostname`"
+    cat $TMPFILE
+  fi
+fi
+
+rm -f $TMPFILE $TMP1
+rm -fr /tmp/check4danb35Updates.*

@@ -1,11 +1,15 @@
 Summary: NethServer configuration for danb35 repository
-Name: nethserver-danb35
-Version: 1.0.0
-Release: 1%{?dist}
+%define name nethserver-danb35
+%define version 1.0.0
+%define release 3
+Name: %{name}
+Version: %{version}
+Release: %{release}%{?dist}
+Release: %{release}%{?dist}
 License: GPL
-Source: %{name}-%{version}.tar.bz2
+Source: %{name}-%{version}.tar.gz
 BuildArch: noarch
-URL: http://dev.nethserver.org/projects/nethforge/wiki/%{name}
+URL: https://wiki.nethserver.org/doku.php?id=danb35_repository
 BuildRequires: nethserver-devtools
 
 AutoReq: no
@@ -39,5 +43,13 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING
 
 %changelog
+* Wed Jan 23 2019 Dan Brown <dan@familybrown.org> - 1.0.0-3.ns7
+- Add second signing key
+- Add daily check for updates
+- Check for signed repo data
+
+* Wed Jun 13 2018 Dan Brown <dan@familybrown.org> - 1.0.0-2.el7
+- Corrected URL
+
 * Sun Jun 10 2018 Dan Brown <dan@familybrown.org> - 1.0.0-1-ns7
 - Initial release, based on nethserver-stephdl
