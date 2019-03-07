@@ -42,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING
 
 %changelog
-* Thu Mar  7 Dan Brown <dan@familybrown.org> - 1.0.0-4.ns7
+* Thu Mar  7 2019 Dan Brown <dan@familybrown.org> - 1.0.0-4.ns7
 - Make check4updates script executable
 
 * Wed Jan 23 2019 Dan Brown <dan@familybrown.org> - 1.0.0-3.ns7
