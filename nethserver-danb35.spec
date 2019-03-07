@@ -1,7 +1,7 @@
 Summary: NethServer configuration for danb35 repository
 %define name nethserver-danb35
 %define version 1.0.0
-%define release 3
+%define release 4
 Name: %{name}
 Version: %{version}
 Release: %{release}%{?dist}
@@ -42,6 +42,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING
 
 %changelog
+* Thu Mar  7 Dan Brown <dan@familybrown.org> - 1.0.0-4.ns7
+- Make check4updates script executable
+
 * Wed Jan 23 2019 Dan Brown <dan@familybrown.org> - 1.0.0-3.ns7
 - Add second signing key
 - Add daily check for updates
