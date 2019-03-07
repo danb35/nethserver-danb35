@@ -44,6 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Thu Mar  7 2019 Dan Brown <dan@familybrown.org> - 1.0.0-4.ns7
 - Make check4updates script executable
+- Add missing " in check4updates script
 
 * Wed Jan 23 2019 Dan Brown <dan@familybrown.org> - 1.0.0-3.ns7
 - Add second signing key
