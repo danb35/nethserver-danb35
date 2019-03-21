@@ -12,7 +12,9 @@ if [ $? = 100 ]; then
   echo -e "===\n=== Yum reports available updates for DanB35 repository :\n===" >> $TMPFILE
   cat $TMP1 >> $TMPFILE
  echo -e "\n    To apply all these updates, you can log on your server and run the following command :\n
-    yum update --enablerepo=danb35\n\n" >> $TMPFILE
+    yum update --enablerepo=danb35\n\n
+For further information and changelogs, see:\n
+https://repo.familybrown.org/nethserver/7/repoview/\n\n" >> $TMPFILE
 fi
 
 if [ -s $TMPFILE ]; then
