@@ -5,3 +5,8 @@ use esmith::Build::CreateLinks qw(:all);
 
 my $event = "nethserver-danb35-update";
 templates2events("/etc/sudoers", $event);
+
+
+event_actions($event,
+             'danb35_enablerepo' => '10',
+);

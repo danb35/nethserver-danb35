@@ -1,7 +1,7 @@
 Summary: NethServer configuration for danb35 repository
 %define name nethserver-danb35
 %define version 1.0.0
-%define release 5
+%define release 6
 Name: %{name}
 Version: %{version}
 Release: %{release}%{?dist}
@@ -42,6 +42,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING
 
 %changelog
+* Fri Jun 14 2019 Dan Brown <dan@familybrown.org> - 1.0.0-6.ns7
+- Enable danb35 repo with software-repos-save
+
 * Thu Mar 21 2019 Dan Brown <dan@familybrown.org> - 1.0.0-5.ns7
 - Add link to repoview to notification email
 

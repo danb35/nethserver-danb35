@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo '[NOTICE] applying new YUM repository configuration'
+exec /sbin/e-smith/signal-event software-repos-save
+
+
