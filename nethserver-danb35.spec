@@ -1,7 +1,7 @@
 Summary: NethServer configuration for danb35 repository
 %define name nethserver-danb35
 %define version 1.0.0
-%define release 7
+%define release 8
 Name: %{name}
 Version: %{version}
 Release: %{release}%{?dist}
@@ -42,6 +42,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING
 
 %changelog
+* Thu Jul  2 2020 Dan Brown <dan@familybrown.org> - 1.0.0-8.ns7
+- Enable repo even when server has a subscription
+
 * Sat Mar 28 2020 Dan Brown <dan@familybrown.org> - 1.0.0-7.ns7
 - Changed definitions of GPG keys
 
