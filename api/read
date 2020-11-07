@@ -8,7 +8,7 @@ use LWP::Simple qw (head);
 my $input = NethServer::ApiTools::readInput();
 my $cmd = $input->{'action'};
 my $ret = {};
-my $url = 'https://repo.familybrown.org/nethserver/7/repoview/';
+my $url = 'http://repo.familybrown.org/';
 
 
 if ( $cmd eq "app-info") {
@@ -22,7 +22,7 @@ if ( $cmd eq "app-info") {
         }
         else {
             $ret = {
-                'name' => "Stephdl offline",
+                'name' => "DanB35 offline",
                 'url' => "https://repo.familybrown.org/nethserver/7/repoview/",
                 'description' => "The danb35 repository seems to be offline",
                 'summary' => "The danb35 repository seems to be offline"
