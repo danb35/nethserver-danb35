@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use JSON;
+use NethServer::ApiTools;
+use LWP::Simple qw (head);
+
+my $input = NethServer::ApiTools::readInput();
+my $cmd = $input->{'action'};
+my $ret = {};
+my $url = 'https://repo.familybrown.org/nethserver/7/repoview/';
+
+
+if ( $cmd eq "app-info") {
+    if (head($url)) {
+            $ret = {
+                'name' => "DanB35 online",
+                'url' => "https://repo.familybrown.org/nethserver/7/repoview/",
+                'description' => "Provide the danb35 repository",
+                'summary' => "Provide the danb35 repository"
+            };
+        }
+        else {
+            $ret = {
+                'name' => "Stephdl offline",
+                'url' => "https://repo.familybrown.org/nethserver/7/repoview/",
+                'description' => "The danb35 repository seems to be offline",
+                'summary' => "The danb35 repository seems to be offline"
+            };
+        }
+} else {
+    NethServer::ApiTools::error();
+}
+
+print encode_json($ret);

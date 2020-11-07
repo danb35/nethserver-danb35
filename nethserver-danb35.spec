@@ -1,7 +1,7 @@
 Summary: NethServer configuration for danb35 repository
 %define name nethserver-danb35
-%define version 1.0.0
-%define release 8
+%define version 1.1.0
+%define release 1
 Name: %{name}
 Version: %{version}
 Release: %{release}%{?dist}
@@ -26,10 +26,20 @@ NethServer configuration for danb35 repository
 %build
 %{makedocs}
 perl createlinks
+sed -i 's/_RELEASE_/%{version}/' %{name}.json
 
 %install
 rm -rf $RPM_BUILD_ROOT
 (cd root   ; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
+
+mkdir -p %{buildroot}/usr/share/cockpit/%{name}/
+mkdir -p %{buildroot}/usr/share/cockpit/nethserver/applications/
+mkdir -p %{buildroot}/usr/libexec/nethserver/api/%{name}/
+cp -a manifest.json %{buildroot}/usr/share/cockpit/%{name}/
+cp -a logo.png %{buildroot}/usr/share/cockpit/%{name}/
+cp -a %{name}.json %{buildroot}/usr/share/cockpit/nethserver/applications/
+cp -a api/* %{buildroot}/usr/libexec/nethserver/api/%{name}/
+chmod +x %{buildroot}/usr/libexec/nethserver/api/%{name}/*
 
 %{genfilelist} $RPM_BUILD_ROOT > e-smith-%{version}-filelist
 
@@ -40,8 +50,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %dir %{_nseventsdir}/%{name}-update
 %doc COPYING
+%attr(0755,root,root) %{_sysconfdir}/cron.daily/check4danb35Updates
+%config(noreplace) /etc/yum.repos.d/danb35.repo
 
 %changelog
+* Sat Nov  7 2020 Dan Brown <dan@familybrown.org> - 1.1.0-1.ns7
+- Give link and status in Cockpit
+
 * Thu Jul  2 2020 Dan Brown <dan@familybrown.org> - 1.0.0-8.ns7
 - Enable repo even when server has a subscription
 

@@ -1,0 +1,7 @@
+ #
+ # nsapi_nethserver_danb35
+ #
+ Cmnd_Alias NSAPI_NETHSERVER_DANB35 = \
+      /usr/libexec/nethserver/api/nethserver-danb35/read
+
+ Defaults!NSAPI_NETHSERVER_DANB35 !requiretty

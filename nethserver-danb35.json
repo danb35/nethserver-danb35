@@ -1,0 +1,21 @@
+ {
+   "id": "nethserver-danb35",
+   "name": "danb35",
+   "summary": "Provide the repository of Dan Brown",
+   "description": "Provide the repository of Dan Brown",
+   "url": "",
+   "provides": ["nethserver-danb35"],
+  "release": {
+    "version": "_RELEASE_"
+  },
+  "author": {
+        "name": "Dan Brown",
+        "url": "https://github.com/danb35/nethserver-danb35",
+        "email": "dan@familybrown.org"
+  },
+   "infoapi": {
+     "path": "nethserver-danb35/read"
+   },
+   "icon": "logo.png",
+   "external": true
+ }
