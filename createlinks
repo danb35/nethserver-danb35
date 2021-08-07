@@ -5,8 +5,8 @@ use esmith::Build::CreateLinks qw(:all);
 
 my $event = "nethserver-danb35-update";
 templates2events("/etc/sudoers", $event);
+templates2events("/etc/nethserver/eorepo.conf", $event);
 
-
-event_actions($event,
-             'danb35_enablerepo' => '10',
-);
+#event_actions($event,
+#
+#);
